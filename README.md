@@ -20,6 +20,7 @@ Files can be found from the links below:
     * catalogproject.py
     * database_setup.py
     * loaditems.py
+    * client_secrets.json
     * static folder (and all it's contents)
     * templates folder (and all it's contents)
 
@@ -41,3 +42,6 @@ To view API endpoints, the addresses are as follows:
    * /catalog/JSON
    * /catalog/_(category name)_/JSON
    * /catalog/_(categoryname)_/_(item name)_/JSON
+
+## Note:
+Since the project specifies to use names as opposed to ids as url parameters, this app was designed such that each category can only have one unique item name.
