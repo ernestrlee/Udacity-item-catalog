@@ -38,6 +38,6 @@ The item catalog allows you to browse a set of categories and thier items.  It a
 In order to add an item to the catalog, you must have a google account to sign in.  Once signed in, you can create, edit, or delete items that you have added to the application.
 
 To view API endpoints, the addresses are as follows:
-   */catalog/JSON
-   */catalog/(_category name_)/JSON
-   */catalog/(_categoryname_)/(_item name_)/JSON
+   *`/catalog/JSON`
+   *`/catalog/(_category name_)/JSON`
+   *`/catalog/(_categoryname_)/(_item name_)/JSON`
