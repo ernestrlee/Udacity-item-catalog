@@ -39,5 +39,5 @@ In order to add an item to the catalog, you must have a google account to sign i
 
 To view API endpoints, the addresses are as follows:
    * `/catalog/JSON`
-   * `/catalog/(_category name_)/JSON`
-   * `/catalog/(_categoryname_)/(_item name_)/JSON`
+   * `/catalog/( _category name_)/JSON`
+   * `/catalog/( _categoryname_)/(_item name_)/JSON`
