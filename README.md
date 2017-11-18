@@ -16,7 +16,7 @@ Files can be found from the links below:
 4. Configure the the VM using files that can be found in the below link:
     - https://github.com/udacity/fullstack-nanodegree-vm
 
-5. Download the files from this Git repository and place them into the same folder.  Make sure the files are in the v:
+5. Download the files from this Git repository and place them into the same folder.  Make sure the files are in the same path as the virtual machine files.
     * catalogproject.py
     * database_setup.py
     * loaditems.py
