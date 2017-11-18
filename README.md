@@ -29,7 +29,7 @@ Follow the below instructions to set up the web server.
 2. Start your virtual machine.  If using Vagrant, this is usually done by using the `vagrant up` command followed by `vagrant ssh`.
 3. Navigate to the directory that contains the "catalogproject.py" file.
 4. Using Python, run the file, "database_setup.py".  For example, `python database_setup.py`.  This will set up an sqlite database, "cataloginfo.db".
-5. Next, run the file "loaditems.py".  For example, `python loaditems_setup.py`.  This will initially populate the database with information.
+5. Next, run the file "loaditems.py".  For example, `python loaditems.py`.  This will initially populate the database with information.
 6. To start the web server, run the item catalog file "catalogproject.py".  For example `python catalogproject.py`.  This will start the web server on local host 8000.
 7. Finally, open a browser and type the address into the browser. `localhost:8000`
 
@@ -38,6 +38,6 @@ The item catalog allows you to browse a set of categories and thier items.  It a
 In order to add an item to the catalog, you must have a google account to sign in.  Once signed in, you can create, edit, or delete items that you have added to the application.
 
 To view API endpoints, the addresses are as follows:
-*/catalog/JSON
-*/catalog/(_category name_)/JSON
-*/catalog/(_categoryname_)/(_item name_)/JSON
+   */catalog/JSON
+   */catalog/(_category name_)/JSON
+   */catalog/(_categoryname_)/(_item name_)/JSON
