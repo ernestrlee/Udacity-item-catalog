@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div id="flash_message">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li> <strong> {{ message }} </strong> </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <section id="main_container" class="container">
+        {% include "categorydrop.html" %}
+        
+        <div id="category_list">
+            <h2>Available Categories:</h2>
+            <ul class="no-dot">
+                {% for category in categories %}
+                    <a class="category-links" href="{{ url_for('showCategory', category_name = category.name) }}"><li class="btn-links">{{ category.name }}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="recent_list">
+            <h2>Recently added items:</h2>
+            <ul>
+                {% for item in recent_items %}
+                    <li>{{ item.name }} <span class="sub-ital"> ({{ item.category.name }})</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{%  endblock %}

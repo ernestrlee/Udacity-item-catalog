@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div id="flash_message">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li class="message">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <section id="main_container" class="container">
+        {% include "categorydrop.html" %}
+        
+        <div id="category_list">
+            <h2>Available Categories:</h2>            
+            <ul class="no-dot">
+                {% for category in categories %}
+                <a class="category-links" href="{{ url_for('showCategory', category_name = category.name) }}"><li class="btn-links">{{ category.name }}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div id="item_list">
+            <div id="category_head" class="container">
+                <h2>Category: {{ category.name }}</h2>                                
+            </div>
+            <button id="view_catalog_btn" onclick="location.href=&quot{{ url_for('showCatalog') }}&quot">View recently added items</button>
+            {% if items|length == 0 %}
+            <p>This category is empty, please add an item.</p>
+            
+            <div id="add_item">
+                <button id="add_item_btn" onclick="location.href=&quot{{ url_for('addItem', category_name = category.name) }}&quot">Add a new item</button>
+            </div>
+
+            {% else %}
+            <div id="add_item">
+                <button id="add_item_btn" onclick="location.href=&quot{{ url_for('addItem', category_name = category.name) }}&quot">Add a new item</button>
+            </div>
+
+            <div id="items">
+                <h2>Items:</h2>
+                <ul>
+                    {% for item in items %}
+                    <li><a href="{{ url_for('showItem', category_name = category.name, item_name = item.name) }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

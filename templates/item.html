@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div id="flash_message">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li class="message">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <section id="main_container" class="container">
+        <div id="item_title">
+            <h2>Category: {{ category.name }}</h2>
+            <button onclick="location.href=&quot{{ url_for('showCategory', category_name = category.name) }}&quot">Back to category view</button>
+        </div>
+        
+        <div id="item_details">
+            <h2>Item Information</h2>
+            <h2>{{ item.name }}</h2>
+            <img class="item-image" src="{{ item.imageurl }}">
+            <h3>Description:</h3>
+            <p>{{ item.description }}</p>
+            <div id="buttons">
+                <button onclick="location.href=&quot{{ url_for('editItem', category_name = category.name, item_name = item.name) }}&quot">Edit</button>
+                <button onclick="location.href=&quot{{ url_for('deleteItem', category_name = category.name, item_name = item.name) }}&quot">Delete</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

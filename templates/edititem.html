@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}    
+    
+    <section id="main_container" class="container">
+        <div id="item_title">
+            <h2>Category: {{ category.name }}</h2>
+        </div>
+        <form id="edit_form" action="{{ url_for('editItem', category_name = category.name, item_name = item.name) }}" method="post">
+            <h2>Edit item information for "{{ item.name }}"</h2>
+            <div class="error-flash-message">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class="list-none">
+                        {% for message in messages %}
+                            <li class="message">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <h3>Item Name:</h3>
+            <input class="form-field" type="text" size="30" name="name" placeholder="{{ item.name }}"><br>
+            <h3>Item Description:</h3>
+            <textarea class="form-area" id="item_description" name="desc">{{ item.description }}</textarea><br>
+            <h3>Image URL:</h3>
+            <input class="form-field"type="text" size="30" name="image" placeholder="{{ item.imageurl }}"><br>
+            <h3>Category:</h3>
+            <select class="form-field" name="category">
+                {% for c in categories %}
+                    {% if c.name == item.category_name %}
+                        <option value="{{ c.name }}" selected>{{ c.name }}</option>
+                    {% else %}                        
+                        <option value="{{ c.name }}">{{ c.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Save">
+            <input type="button" value="Cancel" onclick="location.href=&quot{{ url_for('showItem', category_name = category.name, item_name = item.name) }}&quot">
+        </form>
+    </section>
+{% endblock %}

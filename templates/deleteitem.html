@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <section id="main_container" class="container">
+        <div id="item_title">
+            <h2>Category: {{ category.name }}</h2>
+        </div>
+        <form id="delete_form" action="#" method="post">
+            <h2>Delete Item</h2>
+            <h3>Are you sure you wish to delete "{{ item.name }}" from {{ category.name }}?</h3>
+            <input type="submit" value="Delete">
+            <input type="button" value="Cancel" onclick="location.href=&quot{{ url_for('showItem', category_name = category.name, item_name = item.name) }}&quot">
+        </form>
+    </section>
+{% endblock %}

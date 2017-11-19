@@ -1,0 +1,9 @@
+<div id="category_dropdown">
+    <h2>Available Categories:</h2>
+    <select id="category_select" onchange="location.href=this.value">
+        <option selected>Select a category</option>
+        {% for category in categories %}
+            <option value="{{ url_for('showCategory', category_name = category.name) }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+</div>
