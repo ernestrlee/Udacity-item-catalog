@@ -20,6 +20,7 @@ Files can be found from the links below:
     * catalogproject.py
     * database_setup.py
     * loaditems.py
+    * cataloginfo.db (download this file only if you do not want to generate the database using database_setup.py and loaditems.py)
     * client_secrets.json
     * static folder (and all it's contents)
     * templates folder (and all it's contents)
