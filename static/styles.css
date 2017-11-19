@@ -1,0 +1,313 @@
+/*General styles for all layouts unless overridden by media quiries, mainly for screen widths under 600px*/
+
+*{
+    box-sizing: border-box;
+}
+
+.clearfix {
+	overflow: auto;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.login {
+    text-align: center;
+    width: 300px;
+    min-height: 200px;
+    margin: 40px auto;
+    padding: 50px 0;
+    border: 1px solid black;
+}
+
+.title {
+    width: 100%;
+    font-family: 'Coda', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+#signinContainer, #catalogButton {
+    display: block;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    padding: 10px 5px;
+}
+
+#result {
+    display: block;
+    width: 100%;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 10px;
+	font-family: "Roboto", sans-serif;
+	background: linear-gradient(black, #555);
+}
+
+header {
+    background-color: rgba(0, 204, 255, 0.7);    
+    padding: 10px;
+    margin: 0 0 20px 0;
+    border: 1px solid black;
+}
+
+h2 {
+    font-family: 'Coda', cursive;
+}
+
+button {
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input, select {
+    min-height: 40px;
+    padding: 5px;
+}
+
+#login {
+    text-align: right;
+    align-self: center;
+}
+
+#signinBox {
+    text-align: center;
+    width: 300px;
+    min-height: 200px;
+    margin: auto;
+    padding: 10px;
+    background: white;
+    border: 1px solid black;
+}
+
+#signinBox input {
+    height: 40px;
+    width: 100px;
+}
+
+#signinButton {
+    margin: 10px 0;
+}
+
+#view_catalog_btn {
+    display: block;
+    min-width: 200px;
+    align-self: center;
+    padding: 0 10px 0 10px;
+}
+
+#main_container {
+    background: white;
+    border: 1px solid black;
+    width: 100%;
+}
+
+#category_list {
+    display: none;
+}
+
+#category_dropdown {
+    display: block;
+    width: 100%;  
+    padding: 10px;
+    border: 1px solid black;
+} 
+
+#category_dropdown select {
+    width: 100%;
+}
+
+#item_title {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#category_head h2 {
+    margin: 10px 0;
+    width: 100%;
+}
+
+#recent_list, #item_list, #item_details, #add_form, #edit_form, #delete_form {
+    float: left;
+    width: 100%;
+    background: #eee;
+    color: #333;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+ul.no-dot {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item-image {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.category-links{
+    text-decoration: none;
+    color: #000;    
+}
+
+.btn-links {
+	width: 100%;
+	padding: 10px 5px;
+	margin: 0 0 10px 0;
+	border: 1px solid black;	
+}
+
+.btn-links:hover {
+	color: #555;
+	background: #ddd;
+    cursor: pointer;
+}
+
+.btn-links:active {
+	color: #555;
+	background: #bbb;
+    cursor: pointer;
+}
+
+.sub-ital {
+    font-style: italic;
+    font-size: .75em;
+    color: gray;
+}
+
+.form-field {
+    width: 300px;
+}
+
+.form-area {
+    width: 300px;
+    min-height: 100px;
+}
+
+.list-none {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#flash_message {
+    color: white;
+}
+
+#login_flash_message {
+    color: black;
+}
+
+.error-flash-message {
+    color: red;
+}
+
+#add_item_btn {
+    min-width: 200px;
+    border: 1px solid #555;
+    background: #c5e09a;
+    margin: 10px 0;
+}
+
+/*Two column layouts for screen widths between 600px and 849px*/
+@media screen and (min-width:600px) and (max-width:849px) {
+    .title {
+        width: 70%;
+        font-family: 'Coda', cursive;
+        font-size: 35px;
+        text-align: left;
+        color: white;
+    }
+
+    #signinContainer, #catalogButton {
+        display: block;
+        width: 30%;
+        text-align: right;
+        align-self: center;
+        padding: 10px 5px;
+    }
+
+    #category_dropdown {
+        display: block;
+        width: 100%;
+        
+    }   
+
+    #category_head h2 {
+        margin: 10px 0;
+        width: auto;
+    }
+
+    #recent_list, #item_list, #item_details, #add_form, #edit_form, #delete_form {
+        float: left;
+        width: 100%;
+        background: #eee;
+        color: #333;
+        border-left: 1px solid black;
+        padding: 10px;
+    } 
+}
+
+/*Two column layouts for screen widths greater than 850px*/
+@media screen and (min-width:850px) {
+    .title {
+        width: 80%;
+        font-family: 'Coda', cursive;
+        font-size: 40px;
+        text-align: left;
+        color: white;
+    }
+
+    #signinContainer, #catalogButton {
+        display: block;
+        width: 20%;
+        text-align: right;
+        align-self: center;
+        padding: 10px 5px;
+    }
+
+    #category_list, #item_title {
+        display: block;
+        float: left;
+        width: 30%;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    #category_dropdown {
+        display: none;
+    }
+
+    #category_head h2 {
+        margin: 10px 0;
+        width: auto;
+    }
+
+    #recent_list, #item_list, #item_details, #add_form, #edit_form, #delete_form {
+        float: left;
+        width: 70%;
+        background: #eee;
+        color: #333;
+        border-left: 1px solid black;
+        padding: 10px;
+    }     
+}
